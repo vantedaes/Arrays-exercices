@@ -93,21 +93,59 @@ const fruits = ["Apple", "Orange", "Kiwi", "Banana"];
 // gano(tragamonedas)
 // Crear una función gano que tome como argumento un array tragamonedas con 5 símbolos y devuelva true si son iguales y false sino. Si el array tiene más de 5 símbolos, s´ólo debe comparar los 5 primeros.
 
-const gano = (tragamonedas) => {
-  for (let i = 0; i < 5; i++) {
-    if (tragamonedas[i] !== "⭐️") {
-      return true;
+// const gano = (tragamonedas) => {
+//   for (let i = 0; i < 5; i++) {
+//     if (tragamonedas[i] !== "⭐️") {
+//       return true;
+//     }
+//     return false;
+//   }
+// };
+
+// const gano = (tragamonedas) => {
+//   for (let i = 0; i < 5 && i < tragamonedas.length; i++) {
+//     if (tragamonedas[i] !== tragamonedas[0]) {
+//       return false; // Si un símbolo no es igual al primero, devuelve false inmediatamente
+//     }
+//   }
+//   return true; // Si todos los símbolos son iguales, devuelve true
+// };
+// console.log(gano(["⭐️", "⭐️", "⭐️", "💫", "✨"])); // false
+// console.log(gano(["💫", "💫", "💫", "💫", "💫"])); // true
+// console.log(gano(["💫", "💫", "💫", "💫", "💫", "⭐️"])); // true
+
+// estanJuntos(personajes)
+// Crear una función estanJuntos que tome como argumento un array de strings personajes, y devuelva true si Sam se encuentra al lado de Frodo, ya sea antes o después, o false sino. Ejemplo:
+
+// const estanJuntos = (personajes) => {
+//   for (let i = 0; i < personajes.length; i++) {
+//     if (personajes[i] === "Sam") {
+//       if (personajes[i + 1] === "Frodo" || personajes[i - 1] === "Frodo") {
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// };
+
+// console.log(estanJuntos(["Sam", "Frodo", "Legolas"])); // true
+// console.log(estanJuntos(["Aragorn", "Frodo", "Frodo"])); // false
+// console.log(estanJuntos(["Sam", "Orco", "Frodo"])); // false
+
+// Crear una función separar que tome como argumento un string con emojis de perros y gatos y devuelva un string con los perros agrupados por un lado y los gatos por otro. Ejemplo:
+
+const separar = (animalitos) => {
+  let perros = [];
+  let gatos = [];
+
+  for (let i = 0; i < animalitos.length; i++) {
+    if (animalitos[i] === "🐶") {
+      perros.push("🐶");
+    } else if (animalitos[i] === "🐱") {
+      gatos.push("🐱");
     }
-    return false;
   }
+  return perros.join("") + gatos.join("");
 };
 
-console.log(gano(["⭐️", "⭐️", "⭐️", "💫", "✨"])); // false
-console.log(gano(["💫", "💫", "💫", "💫", "💫"])); // true
-// console.log(gano(['💫', '💫', '💫', '💫', '💫', '⭐️'])) // true
-
-// const ganaste = ["⭐️", "⭐️", "⭐️", "💫", "✨"];
-// for (let i = 0; i <= 5; i++) {
-//   console.log;
-//   ganaste;
-// }
+console.log(separar("🐶🐱🐶🐱🐱🐶🐶")); // '🐶🐶🐶🐶🐱🐱🐱'
